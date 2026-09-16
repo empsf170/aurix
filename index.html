@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURIX | DJ & Live Entertainment</title>
+    <meta name="description"
+        content="AURIX delivers premium DJ performances, live entertainment and unforgettable music experiences for events, parties, festivals and corporate celebrations.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;600;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%237C5CFF' rx='20'/><text x='50' y='75' font-family='sans-serif' font-size='70' font-weight='bold' fill='white' text-anchor='middle'>A</text></svg>">
+</head>
+
+<body class="dark-theme">
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Page Transition -->
+    <div class="page-transition">
+        <h2 class="transition-brand">AURIX</h2>
+        <div class="waveform-loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-xl">
+                <a class="navbar-brand text-uppercase fw-bold" href="#">AURIX</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="ri-menu-3-line text-white"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#live">LIVE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#events">EVENTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#music">MUSIC</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery">GALLERY</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="header-right d-none d-xl-flex align-items-center">
+                    <button class="btn btn-outline-light listen-btn rounded-pill me-3 px-4">
+                        <i class="ri-play-fill me-2"></i>LISTEN
+                    </button>
+                    <a href="#booking" class="btn btn-primary rounded-pill px-4 text-uppercase fw-bold">BOOK NOW</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Floating Audio Player -->
+    <div class="floating-player">
+        <div class="player-controls">
+            <button id="playPauseBtn" class="play-btn"><i class="ri-play-fill"></i></button>
+        </div>
+        <div class="player-info">
+            <div class="track-details">
+                <span class="track-name" id="currentTrackName">01 — MIDNIGHT FREQUENCY</span>
+                <span class="artist-name">AURIX LIVE SESSION</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="audioProgress"></div>
+            </div>
+        </div>
+        <div class="player-time">
+            <span id="currentTime">00:00</span> / <span id="totalTime">06:42</span>
+        </div>
+        <div class="player-volume">
+            <i class="ri-volume-up-fill"></i>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.8">
+        </div>
+        <audio id="mainAudio" src="assets/audio/AURIX-session.mp3"></audio>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg" style="background-image: url('assets/images/home-hero.jpg');"></div>
+            <div class="hero-overlay"></div>
+            <div class="container h-100 position-relative z-1">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-lg-10 text-center d-flex flex-column align-items-center">
+                        <span class="hero-label text-uppercase mb-3 d-inline-block">DJ • LIVE • EXPERIENCE</span>
+                        <h1 class="hero-title text-uppercase display-1 fw-black">
+                            <span class="d-block reveal-text">FEEL</span>
+                            <span class="d-block reveal-text">THE</span>
+                            <span class="d-block reveal-text">WAVE.</span>
+                        </h1>
+                        <p class="hero-subtitle mt-4 mb-5 lead text-white-50">DJ sets and live entertainment designed to
+                            turn every event into an experience.</p>
+                        <div class="hero-actions d-flex flex-wrap gap-4 justify-content-center">
+                            <a href="#booking"
+                                class="btn btn-primary btn-lg rounded-pill px-5 text-uppercase fw-bold">BOOK AURIX</a>
+                            <button class="btn btn-outline-light btn-lg rounded-pill px-5 listen-hero-btn">LISTEN
+                                NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-strip position-absolute bottom-0 w-100 py-3">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-uppercase fw-bold text-accent">NEXT SHOW</span>
+                        <span class="text-uppercase fw-medium text-white">FRIDAY / 24 OCTOBER</span>
+                        <span class="text-uppercase fw-bold text-accent-2">CHENNAI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waveform Divider -->
+        <div class="waveform-divider">
+            <div class="wave-line"></div>
+        </div>
+
+        <!-- Introduction Section -->
+        <section id="about" class="intro-section py-6">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="intro-content">
+                            <span class="section-label text-uppercase text-accent mb-3 d-block">THE EXPERIENCE</span>
+                            <h2 class="section-title text-uppercase display-4 fw-bold mb-5">
+                                NOT JUST MUSIC.<br>A MOMENT.
+                            </h2>
+                            <p class="intro-desc text-muted fs-5 mb-5">AURIX blends sound, visual atmosphere and live
+                                energy to create performances that stay with the crowd long after the final track.</p>
+                            <ul class="intro-features list-unstyled">
+                                <li class="mb-3 d-flex align-items-center"><i
+                                        class="ri-disc-fill text-accent fs-4 me-3"></i> DJ PERFORMANCE</li>
+                                <li class="mb-3 d-flex align-items-center"><i
+                                        class="ri-mic-fill text-accent-2 fs-4 me-3"></i> LIVE ENTERTAINMENT</li>
+                                <li class="mb-3 d-flex align-items-center"><i
+                                        class="ri-vip-diamond-fill text-highlight fs-4 me-3"></i> EVENT EXPERIENCES</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="intro-image-wrapper img-reveal">
+                            <img src="assets/images/experience.jpg" alt="AURIX Live Performance"
+                                class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Performance Section -->
+        <section id="live" class="live-section position-relative py-6 bg-secondary">
+            <div class="container">
+                <h2 class="text-center text-uppercase display-3 fw-bold mb-6">BUILT FOR THE CROWD.</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="live-card">
+                            <span class="live-number text-accent-2">01</span>
+                            <h4 class="text-uppercase mt-4">Club Nights</h4>
+                            <p class="text-muted mt-3">High-energy sets designed for premium nightlife venues.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="live-card">
+                            <span class="live-number text-accent-2">02</span>
+                            <h4 class="text-uppercase mt-4">Festivals</h4>
+                            <p class="text-muted mt-3">Mainstage performances combining music and visual artistry.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="live-card">
+                            <span class="live-number text-accent-2">03</span>
+                            <h4 class="text-uppercase mt-4">Private Events</h4>
+                            <p class="text-muted mt-3">Curated experiences for luxury parties and celebrations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="live-card">
+                            <span class="live-number text-accent-2">04</span>
+                            <h4 class="text-uppercase mt-4">Corporate Events</h4>
+                            <p class="text-muted mt-3">Sophisticated entertainment for brand and corporate gatherings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Event Section -->
+        <section class="featured-event-section position-relative text-center py-7">
+            <div class="bg-image"></div>
+            <div class="overlay-dark"></div>
+            <div class="container position-relative z-1">
+                <span class="text-uppercase text-accent mb-3 d-block fw-bold tracking-wide">THE NEXT FREQUENCY</span>
+                <h2 class="display-2 text-uppercase fw-bold mb-4">MIDNIGHT DISTRICT</h2>
+                <p class="lead text-white-50 mb-5 max-w-700 mx-auto">An immersive night of deep electronic sounds,
+                    visual energy and live performance.</p>
+                <div class="event-details mb-5">
+                    <span class="detail-item"><i class="ri-calendar-2-line me-2"></i> 24 OCTOBER 2026</span>
+                    <span class="detail-item mx-3 d-none d-md-inline">•</span>
+                    <span class="detail-item"><i class="ri-map-pin-line me-2"></i> CHENNAI</span>
+                </div>
+
+                <div id="countdown" class="countdown-container d-flex justify-content-center gap-4 mb-5">
+                    <div class="count-box"><span class="count-num" id="days">00</span><span
+                            class="count-label">DAYS</span></div>
+                    <div class="count-box"><span class="count-num" id="hours">00</span><span
+                            class="count-label">HOURS</span></div>
+                    <div class="count-box"><span class="count-num" id="minutes">00</span><span
+                            class="count-label">MINUTES</span></div>
+                    <div class="count-box"><span class="count-num" id="seconds">00</span><span
+                            class="count-label">SECONDS</span></div>
+                </div>
+
+                <a href="#booking" class="btn btn-outline-highlight btn-lg rounded-pill px-5 text-uppercase">GET EVENT
+                    DETAILS</a>
+            </div>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section id="events" class="events-schedule-section py-6">
+            <div class="container">
+                <h2 class="text-uppercase display-4 fw-bold mb-5">NEXT ON THE WAVE</h2>
+
+                <div class="events-list">
+                    <!-- Event Row 1 -->
+                    <div class="event-row position-relative overflow-hidden d-flex flex-wrap align-items-center py-4 border-bottom border-secondary"
+                        data-image="assets/images/events/midnight-district.jpg">
+                        <div class="event-date d-flex flex-column align-items-center me-4 me-md-5">
+                            <span class="fs-4 fw-bold">24</span>
+                            <span class="text-uppercase text-accent fs-sm">OCT</span>
+                            <span class="text-muted fs-xs">2026</span>
+                        </div>
+                        <div class="event-info flex-grow-1">
+                            <h4 class="text-uppercase fw-bold mb-1">MIDNIGHT DISTRICT</h4>
+                            <div class="d-flex text-muted fs-sm gap-3">
+                                <span><i class="ri-map-pin-line"></i> Chennai</span>
+                                <span><i class="ri-music-2-line"></i> Club Night</span>
+                            </div>
+                        </div>
+                        <div class="event-action mt-3 mt-md-0">
+                            <a href="#"
+                                class="btn btn-link text-white text-decoration-none text-uppercase fw-bold d-flex align-items-center view-event">
+                                VIEW EVENT <i class="ri-arrow-right-line ms-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Event Row 2 -->
+                    <div class="event-row position-relative overflow-hidden d-flex flex-wrap align-items-center py-4 border-bottom border-secondary"
+                        data-image="assets/images/events/echo-after-dark.jpg">
+                        <div class="event-date d-flex flex-column align-items-center me-4 me-md-5">
+                            <span class="fs-4 fw-bold">31</span>
+                            <span class="text-uppercase text-accent fs-sm">OCT</span>
+                            <span class="text-muted fs-xs">2026</span>
+                        </div>
+                        <div class="event-info flex-grow-1">
+                            <h4 class="text-uppercase fw-bold mb-1">ECHO AFTER DARK</h4>
+                            <div class="d-flex text-muted fs-sm gap-3">
+                                <span><i class="ri-map-pin-line"></i> Bengaluru</span>
+                                <span><i class="ri-music-2-line"></i> Live DJ Set</span>
+                            </div>
+                        </div>
+                        <div class="event-action mt-3 mt-md-0">
+                            <a href="#"
+                                class="btn btn-link text-white text-decoration-none text-uppercase fw-bold d-flex align-items-center view-event">
+                                VIEW EVENT <i class="ri-arrow-right-line ms-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Event Row 3 -->
+                    <div class="event-row position-relative overflow-hidden d-flex flex-wrap align-items-center py-4 border-bottom border-secondary"
+                        data-image="assets/images/events/neon-horizon.jpg">
+                        <div class="event-date d-flex flex-column align-items-center me-4 me-md-5">
+                            <span class="fs-4 fw-bold">07</span>
+                            <span class="text-uppercase text-accent fs-sm">NOV</span>
+                            <span class="text-muted fs-xs">2026</span>
+                        </div>
+                        <div class="event-info flex-grow-1">
+                            <h4 class="text-uppercase fw-bold mb-1">NEON HORIZON</h4>
+                            <div class="d-flex text-muted fs-sm gap-3">
+                                <span><i class="ri-map-pin-line"></i> Mumbai</span>
+                                <span><i class="ri-music-2-line"></i> Festival</span>
+                            </div>
+                        </div>
+                        <div class="event-action mt-3 mt-md-0">
+                            <a href="#"
+                                class="btn btn-link text-white text-decoration-none text-uppercase fw-bold d-flex align-items-center view-event">
+                                VIEW EVENT <i class="ri-arrow-right-line ms-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music / Mixes Section -->
+        <section id="music" class="music-section py-6 bg-secondary">
+            <div class="container">
+                <h2 class="text-uppercase display-4 fw-bold mb-5">SELECTED FREQUENCIES</h2>
+
+                <div class="track-list">
+                    <!-- Track 1 -->
+                    <div class="track-row d-flex align-items-center py-3 border-bottom border-dark track-item"
+                        data-src="assets/audio/AURIX-session.mp3" data-title="MIDNIGHT FREQUENCY" data-duration="06:42">
+                        <button class="track-play-btn me-4"><i class="ri-play-fill"></i></button>
+                        <span class="track-num text-muted me-4 font-monospace">01</span>
+                        <h5 class="track-title mb-0 flex-grow-1 text-uppercase">MIDNIGHT FREQUENCY</h5>
+                        <div class="track-waveform flex-grow-1 mx-4 d-none d-md-block">
+                            <!-- CSS Waveform representation -->
+                            <div class="mini-wave"><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <span class="track-time text-muted font-monospace">06:42</span>
+                    </div>
+
+                    <!-- Track 2 -->
+                    <div class="track-row d-flex align-items-center py-3 border-bottom border-dark track-item"
+                        data-src="" data-title="NEON AFTERGLOW" data-duration="05:18">
+                        <button class="track-play-btn me-4"><i class="ri-play-fill"></i></button>
+                        <span class="track-num text-muted me-4 font-monospace">02</span>
+                        <h5 class="track-title mb-0 flex-grow-1 text-uppercase">NEON AFTERGLOW</h5>
+                        <div class="track-waveform flex-grow-1 mx-4 d-none d-md-block">
+                            <div class="mini-wave"><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <span class="track-time text-muted font-monospace">05:18</span>
+                    </div>
+
+                    <!-- Track 3 -->
+                    <div class="track-row d-flex align-items-center py-3 border-bottom border-dark track-item"
+                        data-src="" data-title="CITY PULSE" data-duration="07:21">
+                        <button class="track-play-btn me-4"><i class="ri-play-fill"></i></button>
+                        <span class="track-num text-muted me-4 font-monospace">03</span>
+                        <h5 class="track-title mb-0 flex-grow-1 text-uppercase">CITY PULSE</h5>
+                        <div class="track-waveform flex-grow-1 mx-4 d-none d-md-block">
+                            <div class="mini-wave"><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <span class="track-time text-muted font-monospace">07:21</span>
+                    </div>
+
+                    <!-- Track 4 -->
+                    <div class="track-row d-flex align-items-center py-3 border-bottom border-dark track-item"
+                        data-src="" data-title="AFTER HOURS" data-duration="08:02">
+                        <button class="track-play-btn me-4"><i class="ri-play-fill"></i></button>
+                        <span class="track-num text-muted me-4 font-monospace">04</span>
+                        <h5 class="track-title mb-0 flex-grow-1 text-uppercase">AFTER HOURS</h5>
+                        <div class="track-waveform flex-grow-1 mx-4 d-none d-md-block">
+                            <div class="mini-wave"><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <span class="track-time text-muted font-monospace">08:02</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artist Profile -->
+        <section class="artist-profile-section py-6">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5 order-lg-2">
+                        <div class="artist-img-wrapper img-reveal">
+                            <img src="assets/images/artist.jpg" alt="AURIX Artist" class="img-fluid rounded">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-lg-1">
+                        <h2 class="text-uppercase display-3 fw-black text-white mb-2">AURIX</h2>
+                        <h5 class="text-uppercase text-accent mb-4 fw-bold tracking-wide">DJ / PRODUCER / LIVE PERFORMER
+                        </h5>
+                        <p class="fs-5 text-white-50 mb-5">Known for atmospheric sets, deep grooves and high-energy
+                            transitions, AURIX creates performances that adapt to the energy of every crowd.</p>
+
+                        <div class="row g-4 mb-5">
+                            <div class="col-6 col-sm-3">
+                                <h3 class="fw-bold mb-1">12+</h3>
+                                <span class="text-uppercase text-muted fs-sm">YEARS</span>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <h3 class="fw-bold mb-1">240+</h3>
+                                <span class="text-uppercase text-muted fs-sm">SHOWS</span>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <h3 class="fw-bold mb-1">18</h3>
+                                <span class="text-uppercase text-muted fs-sm">CITIES</span>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <h3 class="fw-bold mb-1 text-highlight">75K+</h3>
+                                <span class="text-uppercase text-muted fs-sm">AUDIENCE</span>
+                            </div>
+                        </div>
+
+                        <div class="artist-socials d-flex gap-3">
+                            <a href="#" class="social-icon-lg"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="social-icon-lg"><i class="ri-soundcloud-line"></i></a>
+                            <a href="#" class="social-icon-lg"><i class="ri-youtube-line"></i></a>
+                            <a href="#" class="social-icon-lg"><i class="ri-spotify-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Services -->
+        <section class="services-section py-6 bg-secondary">
+            <div class="container">
+                <h2 class="text-uppercase display-4 fw-bold mb-5 text-center">CHOOSE YOUR EXPERIENCE</h2>
+
+                <div class="row g-4">
+                    <!-- Service 1 -->
+                    <div class="col-md-6">
+                        <div class="service-block position-relative overflow-hidden group">
+                            <img src="assets/images/dj-set.jpg" alt="DJ Sets"
+                                class="service-img w-100 object-fit-cover">
+                            <div class="service-overlay d-flex flex-column justify-content-end p-4 p-lg-5">
+                                <h3 class="text-uppercase fw-bold mb-2">DJ SETS</h3>
+                                <p class="text-white-50 mb-0">Club nights, festivals and premium nightlife events.</p>
+                                <div class="service-arrow mt-4"><i class="ri-arrow-right-line fs-2"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="col-md-6">
+                        <div class="service-block position-relative overflow-hidden group">
+                            <img src="assets/images/live.jpg" alt="Live Entertainment"
+                                class="service-img w-100 object-fit-cover">
+                            <div class="service-overlay d-flex flex-column justify-content-end p-4 p-lg-5">
+                                <h3 class="text-uppercase fw-bold mb-2">LIVE ENTERTAINMENT</h3>
+                                <p class="text-white-50 mb-0">DJ + live musicians, vocalists and performance artists.
+                                </p>
+                                <div class="service-arrow mt-4"><i class="ri-arrow-right-line fs-2"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="col-md-6">
+                        <div class="service-block position-relative overflow-hidden group">
+                            <img src="assets/images/private.jpg" alt="Private Events"
+                                class="service-img w-100 object-fit-cover">
+                            <div class="service-overlay d-flex flex-column justify-content-end p-4 p-lg-5">
+                                <h3 class="text-uppercase fw-bold mb-2">PRIVATE EVENTS</h3>
+                                <p class="text-white-50 mb-0">Weddings, birthdays, luxury parties and private
+                                    celebrations.</p>
+                                <div class="service-arrow mt-4"><i class="ri-arrow-right-line fs-2"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="col-md-6">
+                        <div class="service-block position-relative overflow-hidden group">
+                            <img src="assets/images/corporate.jpg" alt="Corporate Events"
+                                class="service-img w-100 object-fit-cover">
+                            <div class="service-overlay d-flex flex-column justify-content-end p-4 p-lg-5">
+                                <h3 class="text-uppercase fw-bold mb-2">CORPORATE EVENTS</h3>
+                                <p class="text-white-50 mb-0">Launches, conferences, brand events and company
+                                    celebrations.</p>
+                                <div class="service-arrow mt-4"><i class="ri-arrow-right-line fs-2"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Experience Full-width -->
+        <section
+            class="visual-experience parallax-bg position-relative d-flex align-items-center justify-content-center text-center"
+            style="background-image: url('assets/images/sounds.jpg'); height: 60vh;">
+            <div class="overlay-editorial"></div>
+            <div class="container position-relative z-1">
+                <h2 class="display-1 text-uppercase fw-black text-white mix-blend-overlay">SOUND MEETS LIGHT.</h2>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="gallery-section py-6">
+            <div class="container-fluid px-4 px-lg-5">
+                <h2 class="text-uppercase display-4 fw-bold mb-5 text-center">GALLERY</h2>
+
+                <div class="row g-3 masonry-grid" id="masonryGallery">
+                    <!-- Gallery Item (Large) -->
+                    <div class="col-md-8 col-lg-8 masonry-item">
+                        <div class="gallery-img-wrapper position-relative overflow-hidden"
+                            data-src="assets/images/gallery1.jpg">
+                            <img src="assets/images/gallery1.jpg" class="w-100 object-fit-cover" style="height: 500px;"
+                                alt="Live Performance">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h4 class="text-uppercase mb-1">MIDNIGHT DISTRICT</h4>
+                                    <span class="text-muted">2026</span>
+                                </div>
+                                <span class="gallery-view-text fw-bold tracking-wide">VIEW</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item (Portrait) -->
+                    <div class="col-md-4 col-lg-4 masonry-item">
+                        <div class="gallery-img-wrapper position-relative overflow-hidden"
+                            data-src="assets/images/gallery2.jpg">
+                            <img src="assets/images/gallery2.jpg" class="w-100 object-fit-cover" style="height: 500px;"
+                                alt="DJ Set">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h4 class="text-uppercase mb-1">ECHO AFTER DARK</h4>
+                                    <span class="text-muted">2026</span>
+                                </div>
+                                <span class="gallery-view-text fw-bold tracking-wide">VIEW</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item (Square) -->
+                    <div class="col-md-4 col-lg-4 masonry-item">
+                        <div class="gallery-img-wrapper position-relative overflow-hidden"
+                            data-src="assets/images/gallery3.jpg">
+                            <img src="assets/images/gallery3.jpg" class="w-100 object-fit-cover" style="height: 400px;"
+                                alt="Festival">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h4 class="text-uppercase mb-1">NEON HORIZON</h4>
+                                    <span class="text-muted">2025</span>
+                                </div>
+                                <span class="gallery-view-text fw-bold tracking-wide">VIEW</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item (Wide) -->
+                    <div class="col-md-8 col-lg-8 masonry-item">
+                        <div class="gallery-img-wrapper position-relative overflow-hidden"
+                            data-src="assets/images/gallery4.jpg">
+                            <img src="assets/images/gallery4.jpg" class="w-100 object-fit-cover" style="height: 400px;"
+                                alt="Crowd">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h4 class="text-uppercase mb-1">CITY PULSE</h4>
+                                    <span class="text-muted">2025</span>
+                                </div>
+                                <span class="gallery-view-text fw-bold tracking-wide">VIEW</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item -->
+                    <div class="col-md-6 col-lg-6 masonry-item">
+                        <div class="gallery-img-wrapper position-relative overflow-hidden"
+                            data-src="assets/images/gallery5.jpg">
+                            <img src="assets/images/gallery5.jpg" class="w-100 object-fit-cover" style="height: 450px;"
+                                alt="Stage">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h4 class="text-uppercase mb-1">AFTER HOURS</h4>
+                                    <span class="text-muted">2024</span>
+                                </div>
+                                <span class="gallery-view-text fw-bold tracking-wide">VIEW</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item -->
+                    <div class="col-md-6 col-lg-6 masonry-item">
+                        <div class="gallery-img-wrapper position-relative overflow-hidden"
+                            data-src="assets/images/gallery6.jpg">
+                            <img src="assets/images/gallery6.jpg" class="w-100 object-fit-cover" style="height: 450px;"
+                                alt="Audience">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h4 class="text-uppercase mb-1">PRIVATE EVENT</h4>
+                                    <span class="text-muted">2024</span>
+                                </div>
+                                <span class="gallery-view-text fw-bold tracking-wide">VIEW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox">&times;</span>
+                <img class="lightbox-content" id="lightboxImg">
+                <div class="lightbox-caption" id="lightboxCaption"></div>
+            </div>
+        </section>
+
+        <!-- Video Experience -->
+        <section class="video-section position-relative">
+            <div class="video-thumbnail-wrapper position-relative text-center">
+                <img src="assets/images/video.jpg" alt="Video Thumbnail" class="w-100 object-fit-cover"
+                    style="height: 70vh; filter: brightness(0.6);">
+                <div
+                    class="video-play-overlay position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center cursor-pointer">
+                    <div class="play-circle mb-3">
+                        <i class="ri-play-fill"></i>
+                    </div>
+                    <span class="text-uppercase fw-bold tracking-wide text-white">WATCH THE EXPERIENCE</span>
+                </div>
+            </div>
+
+            <!-- Video Modal placeholder -->
+            <div class="video-modal-backdrop d-none">
+                <div class="video-modal-container">
+                    <button class="close-video-modal"><i class="ri-close-line"></i></button>
+                    <!-- <video controls>...</video> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Press / Social Proof -->
+        <section class="press-section py-7 bg-secondary position-relative overflow-hidden">
+            <div class="bg-quote">"</div>
+            <div class="container position-relative z-1">
+                <h2 class="text-uppercase text-center fw-bold mb-6 fs-5 tracking-wide text-muted">SEEN. HEARD.
+                    EXPERIENCED.</h2>
+
+                <div class="row g-5">
+                    <div class="col-md-4">
+                        <div class="testimonial-block">
+                            <p class="fs-4 fst-italic mb-4 text-white">"One of the most atmospheric live sets we've
+                                experienced this year."</p>
+                            <span class="text-uppercase fw-bold text-accent-2 fs-sm">— EVENT CULTURE</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-block">
+                            <p class="fs-4 fst-italic mb-4 text-white">"An unforgettable night from start to finish."
+                            </p>
+                            <span class="text-uppercase fw-bold text-accent-2 fs-sm">— NIGHTLIFE MAGAZINE</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-block">
+                            <p class="fs-4 fst-italic mb-4 text-white">"AURIX knows exactly how to move a crowd."</p>
+                            <span class="text-uppercase fw-bold text-accent-2 fs-sm">— CITY SOUND</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Strip -->
+        <div class="partners-strip py-4 border-top border-bottom border-dark">
+            <div class="container">
+                <div
+                    class="d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-4 text-muted opacity-50 fw-bold text-uppercase tracking-wide">
+                    <span>SONIC</span>
+                    <span>NIGHTFALL</span>
+                    <span>DISTRICT</span>
+                    <span>PULSE</span>
+                    <span>ECHO</span>
+                    <span>AFTERDARK</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Section -->
+        <section id="booking" class="booking-section py-7 position-relative">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h2 class="text-uppercase display-4 fw-bold mb-3">BRING THE WAVE TO YOUR EVENT.</h2>
+                            <p class="fs-5 text-muted">Tell us about your event, audience and vision.</p>
+                        </div>
+
+                        <form id="bookingForm" class="booking-form dark-form">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                        <label for="name">Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Email"
+                                            required>
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                                        <label for="phone">Phone</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="eventType" aria-label="Event Type">
+                                            <option selected disabled>Select Event Type</option>
+                                            <option value="Club Night">Club Night</option>
+                                            <option value="Festival">Festival</option>
+                                            <option value="Private Event">Private Event</option>
+                                            <option value="Corporate Event">Corporate Event</option>
+                                        </select>
+                                        <label for="eventType">Event Type</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="eventDate" placeholder="Event Date">
+                                        <label for="eventDate">Event Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="location" placeholder="Location">
+                                        <label for="location">Location</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="guests" aria-label="Expected Guests">
+                                            <option selected disabled>Select Capacity</option>
+                                            <option value="< 100">Under 100</option>
+                                            <option value="100-500">100 - 500</option>
+                                            <option value="500-2000">500 - 2,000</option>
+                                            <option value="2000+">2,000+</option>
+                                        </select>
+                                        <label for="guests">Expected Guests</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="budget" aria-label="Budget Range">
+                                            <option selected disabled>Select Budget Range</option>
+                                            <option value="Standard">Standard</option>
+                                            <option value="Premium">Premium</option>
+                                            <option value="Luxury">Luxury</option>
+                                        </select>
+                                        <label for="budget">Budget Range</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Message" id="message"
+                                            style="height: 150px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center mt-5">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-lg rounded-pill px-5 text-uppercase fw-bold w-100 w-md-auto">REQUEST
+                                        BOOKING</button>
+                                </div>
+                            </div>
+                            <div id="formSuccess" class="form-success text-center mt-4 d-none text-highlight fw-bold">
+                                THANK YOU — WE'LL BE IN TOUCH.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Final CTA -->
+        <section id="contact"
+            class="final-cta-section position-relative py-7 text-center d-flex align-items-center justify-content-center"
+            style="background-image: url('assets/images/book-bg.jpg'); min-height: 80vh; background-attachment: fixed; background-size: cover;">
+            <div class="overlay-dark opacity-75"></div>
+            <div class="container position-relative z-1">
+
+                <div
+                    class="contact-info mb-6 d-flex flex-wrap justify-content-center gap-4 gap-md-5 text-white-50 fs-sm tracking-wide">
+                    <div class="text-center">
+                        <span class="text-uppercase text-accent d-block mb-1">BOOKINGS</span>
+                        <a href="mailto:bookings@AURIX.com"
+                            class="text-white text-decoration-none">bookings@AURIX.com</a>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-uppercase text-accent d-block mb-1">PHONE</span>
+                        <a href="tel:+919000000000" class="text-white text-decoration-none">+91 90000 00000</a>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-uppercase text-accent d-block mb-1">BASED IN</span>
+                        <span class="text-white">Chennai, India</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-uppercase text-accent d-block mb-1">AVAILABLE</span>
+                        <span class="text-white">Worldwide</span>
+                    </div>
+                </div>
+
+                <h2 class="display-1 text-uppercase fw-black mb-4">READY TO TURN IT UP?</h2>
+                <p class="fs-4 text-muted mb-5">Let's create a night worth remembering.</p>
+                <a href="#booking" class="btn btn-outline-light btn-lg rounded-pill px-5 text-uppercase fw-bold">BOOK
+                    AURIX</a>
+
+                <!-- Animated waveform under button -->
+                <div class="animated-waveform-bottom mt-5 d-flex justify-content-center gap-1 opacity-50">
+                    <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span
+                        class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span
+                        class="wave-bar"></span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-black py-5 border-top border-dark">
+        <div class="container">
+            <div class="row align-items-center mb-5 g-4">
+                <div class="col-lg-4 text-center text-lg-start">
+                    <h3 class="text-uppercase fw-black fs-2 mb-1">AURIX</h3>
+                    <p class="text-muted text-uppercase tracking-wide fs-xs mb-0">TURN UP THE MOMENT.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <ul class="list-inline mb-0 footer-nav">
+                        <li class="list-inline-item"><a href="#home"
+                                class="text-decoration-none text-muted mx-2 text-uppercase fs-xs">Home</a></li>
+                        <li class="list-inline-item"><a href="#about"
+                                class="text-decoration-none text-muted mx-2 text-uppercase fs-xs">About</a></li>
+                        <li class="list-inline-item"><a href="#live"
+                                class="text-decoration-none text-muted mx-2 text-uppercase fs-xs">Live</a></li>
+                        <li class="list-inline-item"><a href="#events"
+                                class="text-decoration-none text-muted mx-2 text-uppercase fs-xs">Events</a></li>
+                        <li class="list-inline-item"><a href="#music"
+                                class="text-decoration-none text-muted mx-2 text-uppercase fs-xs">Music</a></li>
+                        <li class="list-inline-item"><a href="#gallery"
+                                class="text-decoration-none text-muted mx-2 text-uppercase fs-xs">Gallery</a></li>
+                        <li class="list-inline-item"><a href="#contact"
+                                class="text-decoration-none text-muted mx-2 text-uppercase fs-xs">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="footer-socials">
+                        <a href="#" class="text-muted fs-4 mx-2"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="text-muted fs-4 mx-2"><i class="ri-youtube-line"></i></a>
+                        <a href="#" class="text-muted fs-4 mx-2"><i class="ri-spotify-line"></i></a>
+                        <a href="#" class="text-muted fs-4 mx-2"><i class="ri-soundcloud-line"></i></a>
+                        <a href="#" class="text-muted fs-4 mx-2"><i class="ri-tiktok-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center pt-4 border-top border-dark">
+                <div class="col-md-6 mb-3 mb-md-0 text-center text-md-start">
+                    <form class="newsletter-form d-flex align-items-center">
+                        <span class="text-uppercase fs-xs tracking-wide text-white me-3 d-none d-sm-block">JOIN THE
+                            WAVE</span>
+                        <div class="input-group">
+                            <input type="email"
+                                class="form-control form-control-sm border-dark bg-transparent text-white rounded-start-pill px-3"
+                                placeholder="Email Address">
+                            <button class="btn btn-primary btn-sm rounded-end-pill px-3" type="button"><i
+                                    class="ri-arrow-right-line"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-muted fs-xs">
+                    <span class="me-3">© 2026 AURIX. All Rights Reserved.</span>
+                    <a href="#" class="text-muted text-decoration-none me-2">Privacy</a>
+                    <a href="#" class="text-muted text-decoration-none">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollTopBtn" class="scroll-top-btn"><i class="ri-arrow-up-line"></i></button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/audio-player.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/events.js"></script>
+</body>
+
+</html>
