@@ -70,17 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         animateCursor();
         
-        // Hover effects
-        const interactiveElements = document.querySelectorAll('input, textarea, select');
+        // Keep the custom cursor away from booking form controls.
+        // This prevents the large hover/blur effect over inputs and selects.
+        const interactiveElements = document.querySelectorAll('.track-play-btn, .play-circle, .listen-hero-btn');
         
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('cursor-grow');
-                
-                // Add specific text based on element
-                if(el.classList.contains('gallery-img-wrapper')) {
-                    cursor.setAttribute('data-text', 'VIEW');
-                } else if(el.classList.contains('track-play-btn') || el.classList.contains('play-circle')) {
+                if (el.classList.contains('track-play-btn') || el.classList.contains('play-circle')) {
                     cursor.setAttribute('data-text', 'PLAY');
                 } else {
                     cursor.setAttribute('data-text', '');
@@ -202,22 +199,46 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        Active Menu Highlighting
        ========================================================================== */
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current) && current !== null) {
-                link.classList.add('active');
-            }
-        });
-    });
+    // Only use sections that have an actual navigation link. This avoids
+    // non-menu sections such as #booking clearing the active menu state.
+    const navLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
+    const sections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
 
+    const setActiveNav = (id) => {
+        navLinks.forEach(link => {
+            const target = link.getAttribute('href').slice(1);
+            link.classList.toggle('active', target === id);
+        });
+    };
+
+    const updateActiveNav = () => {
+        const scrollPosition = window.scrollY + 170;
+        let currentId = sections.length ? sections[0].id : '';
+
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            if (sectionTop <= scrollPosition) {
+                currentId = section.id;
+            }
+        });
+
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10 && sections.length) {
+            currentId = sections[sections.length - 1].id;
+        }
+
+        setActiveNav(currentId);
+    };
+
+    if (sections.length && navLinks.length) {
+        updateActiveNav();
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        window.addEventListener('resize', updateActiveNav);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setActiveNav(link.getAttribute('href').slice(1));
+            });
+        });
+    }
