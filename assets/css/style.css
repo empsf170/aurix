@@ -919,3 +919,663 @@ a:hover {
 /* Footer Social Icons Hover */
 .footer-socials a { transition: all 0.3s ease; display: inline-block; }
 .footer-socials a:hover { color: var(--color-accent) !important; transform: translateY(-5px); }
+
+
+/* =========================================================
+   AURIX CORRECTIONS - 2026-09-28
+   ========================================================= */
+.mobile-header-actions {
+    width: 100%;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-header-actions .btn {
+    min-height: 46px;
+}
+
+.footer-nav a {
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+    color: var(--color-accent) !important;
+    opacity: 1;
+}
+
+.dark-form .form-select option,
+.dark-form select option {
+    background: #11131a;
+    color: #ffffff;
+}
+
+.dark-form .form-select:focus,
+.dark-form select:focus {
+    color: #ffffff !important;
+}
+
+.event-info > div {
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+    .mobile-header-actions {
+        display: block;
+    }
+
+    .track-row {
+        display: grid !important;
+        grid-template-columns: 42px 34px minmax(0, 1fr) auto;
+        column-gap: 10px;
+        align-items: center !important;
+        width: 100%;
+    }
+
+    .track-row .track-play-btn {
+        margin-right: 0 !important;
+        flex: 0 0 auto;
+    }
+
+    .track-row .track-num {
+        margin-right: 0 !important;
+        width: 34px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .track-row .track-title {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        line-height: 1.3;
+    }
+
+    .track-row .track-time {
+        white-space: nowrap;
+        justify-self: end;
+    }
+
+    .service-overlay {
+        text-align: center;
+        align-items: center;
+    }
+
+    .service-overlay .service-arrow {
+        align-self: center;
+    }
+
+    .event-row {
+        align-items: center !important;
+    }
+
+    .event-date {
+        flex: 0 0 auto;
+    }
+
+    .event-info {
+        min-width: 0;
+    }
+
+    .event-info > div {
+        justify-content: flex-start;
+    }
+
+    .testimonial-block {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        padding: 1.25rem 1rem 1.5rem;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .track-row {
+        grid-template-columns: 40px 30px minmax(0, 1fr) auto;
+        column-gap: 8px;
+        padding-top: 0.9rem !important;
+        padding-bottom: 0.9rem !important;
+    }
+
+    .track-row .track-play-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .track-row .track-num {
+        width: 30px;
+        font-size: 0.75rem;
+    }
+
+    .track-row .track-title {
+        font-size: 0.9rem;
+    }
+
+    .track-row .track-time {
+        font-size: 0.72rem;
+    }
+
+    .gallery-view-text {
+        display: inline-block !important;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .gallery-overlay {
+        padding: 1.25rem;
+    }
+
+    .service-overlay {
+        padding: 1.5rem !important;
+    }
+
+    .event-info > div {
+        gap: 0.6rem !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .gallery-view-text {
+        display: inline-block;
+    }
+}
+
+/* Strong active navigation state */
+.nav-link.active {
+    color: var(--color-accent) !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 12px rgba(124, 92, 255, 0.35);
+}
+
+@media (max-width: 991px) {
+    .nav-link.active {
+        background: rgba(124, 92, 255, 0.10);
+        border-radius: 999px;
+    }
+}
+
+/* =========================================================
+   AURIX - Final responsive corrections
+   ========================================================= */
+
+/* Keep Choose Your Experience content outside the image on tablet/mobile. */
+@media (max-width: 991.98px) {
+    .services-section .service-block {
+        height: auto !important;
+        overflow: visible !important;
+        background: transparent;
+    }
+
+    .services-section .service-img {
+        display: block;
+        width: 100%;
+        height: 360px !important;
+        object-fit: cover;
+        transform: none !important;
+        border-radius: 8px;
+    }
+
+    .services-section .service-overlay {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        background: transparent !important;
+        padding: 1.25rem 0 0 !important;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+
+    .services-section .service-overlay h3 {
+        color: var(--color-text) !important;
+        margin-bottom: .5rem !important;
+    }
+
+    .services-section .service-overlay p {
+        color: var(--color-muted) !important;
+        margin-bottom: 0 !important;
+    }
+
+    .services-section .service-arrow {
+        margin-top: .75rem !important;
+    }
+
+    /* Keep gallery title/details and VIEW below the image instead of over it. */
+    .gallery-section .gallery-img-wrapper {
+        overflow: visible !important;
+        height: auto !important;
+        background: transparent;
+    }
+
+    .gallery-section .gallery-img-wrapper img {
+        display: block;
+        width: 100%;
+        height: 360px !important;
+        object-fit: cover;
+        border-radius: 4px;
+        transform: none !important;
+    }
+
+    .gallery-section .gallery-overlay {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 1rem;
+        padding: 1rem 0 .25rem !important;
+    }
+
+    .gallery-section .gallery-info,
+    .gallery-section .gallery-view-text {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .gallery-section .gallery-info h4 {
+        color: var(--color-text) !important;
+        margin-bottom: .2rem !important;
+    }
+
+    .gallery-section .gallery-info span {
+        color: var(--color-muted) !important;
+    }
+
+    .gallery-section .gallery-view-text {
+        display: inline-block !important;
+        color: var(--color-accent) !important;
+        flex: 0 0 auto;
+    }
+
+    /* Tablet testimonials: keep all quote text on parallel baselines/blocks. */
+    .press-section .row {
+        align-items: stretch !important;
+    }
+
+    .press-section .testimonial-block {
+        height: 100%;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .services-section .service-img,
+    .gallery-section .gallery-img-wrapper img {
+        height: 280px !important;
+    }
+
+    .gallery-section .gallery-overlay {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: .5rem;
+    }
+
+    .press-section .testimonial-block {
+        min-height: 0;
+    }
+}
+
+/* White calendar icons on the event details and booking date control. */
+.featured-event-section .ri-calendar-2-line {
+    color: #fff !important;
+}
+
+.dark-form input[type="date"] {
+    color-scheme: dark;
+}
+
+.dark-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FINAL AURIX CORRECTIONS - 28 SEP 2026
+   ========================================================= */
+
+/* Choose Your Experience: every service element stays outside the image
+   on tablet and mobile. */
+@media (max-width: 991.98px) {
+    .services-section .service-block {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .services-section .service-block .service-img {
+        position: relative !important;
+        inset: auto !important;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        height: 360px !important;
+        object-fit: cover !important;
+        transform: none !important;
+        order: 1 !important;
+    }
+
+    .services-section .service-block .service-overlay {
+        position: relative !important;
+        inset: auto !important;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 1.25rem 0 .25rem !important;
+        margin: 0 !important;
+        background: transparent !important;
+        display: flex !important;
+        order: 2 !important;
+        color: var(--color-text) !important;
+    }
+
+    .services-section .service-block .service-overlay h3,
+    .services-section .service-block .service-overlay p,
+    .services-section .service-block .service-overlay .service-arrow {
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .services-section .service-block .service-overlay h3 {
+        color: var(--color-text) !important;
+    }
+
+    .services-section .service-block .service-overlay p {
+        color: var(--color-muted) !important;
+    }
+
+    /* Gallery: image first, then ALL gallery content below it. */
+    .gallery-section .gallery-img-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .gallery-section .gallery-img-wrapper > img {
+        order: 1 !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 360px !important;
+        object-fit: cover !important;
+        transform: none !important;
+        border-radius: 4px !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-overlay {
+        order: 2 !important;
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 1rem 0 .25rem !important;
+        margin: 0 !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 1rem !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-info,
+    .gallery-section .gallery-img-wrapper .gallery-view-text {
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-info h4 {
+        color: var(--color-text) !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-info span {
+        color: var(--color-muted) !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-view-text {
+        display: inline-block !important;
+        color: var(--color-accent) !important;
+        flex: 0 0 auto !important;
+    }
+
+    /* Seen / Heard / Experienced: one full-width card per row on tablet/mobile. */
+    .press-section .row > [class*="col-"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+
+    .press-section .testimonial-block {
+        width: 100% !important;
+        min-height: 0 !important;
+        height: auto !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .services-section .service-block .service-img,
+    .gallery-section .gallery-img-wrapper > img {
+        height: 280px !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-overlay {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+}
+
+/* Contact / booking form: no visual hover styling. */
+.dark-form .form-control:hover,
+.dark-form .form-select:hover,
+.dark-form textarea:hover,
+.dark-form input:hover,
+.dark-form select:hover {
+    background-color: var(--color-surface) !important;
+    border-color: var(--color-border) !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Calendar icons: always white. */
+.dark-form input[type="date"]::-webkit-calendar-picker-indicator,
+.dark-form input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+.dark-form input[type="month"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1) !important;
+    opacity: 1 !important;
+}
+
+/* =========================================================
+   FINAL GALLERY + CTA VISIBILITY CORRECTIONS - 28 SEP 2026
+   ========================================================= */
+
+/* Remove gallery hover zoom/blur effect completely. */
+.gallery-img-wrapper,
+.gallery-img-wrapper img,
+.gallery-img-wrapper .gallery-overlay,
+.gallery-img-wrapper .gallery-info,
+.gallery-img-wrapper .gallery-view-text {
+    filter: none !important;
+}
+
+.gallery-img-wrapper img {
+    transition: none !important;
+}
+
+.gallery-img-wrapper:hover img {
+    transform: none !important;
+    filter: none !important;
+}
+
+.gallery-img-wrapper:hover .gallery-overlay {
+    filter: none !important;
+}
+
+@media (max-width: 991.98px) {
+    /* Gallery content: image first, ALL text on a full-width block below it. */
+    .gallery-section .gallery-img-wrapper {
+        overflow: visible !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-overlay {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        gap: .65rem !important;
+        padding: 1rem 0 .5rem !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+    }
+
+    /* Heading uses the complete available width and stays on its own line. */
+    .gallery-section .gallery-img-wrapper .gallery-info {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        display: block !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-info h4 {
+        width: 100% !important;
+        display: block !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        line-height: 1.2 !important;
+        margin: 0 0 .35rem !important;
+    }
+
+    .gallery-section .gallery-img-wrapper .gallery-info span {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* VIEW is also on its own line, below the heading/details. */
+    .gallery-section .gallery-img-wrapper .gallery-view-text {
+        align-self: flex-start !important;
+        display: block !important;
+        width: 100% !important;
+        transform: none !important;
+        opacity: 1 !important;
+        margin: 0 !important;
+    }
+
+    /* Give the CTA content a readable translucent panel over the background image. */
+    .final-cta-section > .container {
+        width: min(92%, 1100px) !important;
+        max-width: 1100px !important;
+        padding: 2rem 1.5rem !important;
+        border-radius: 12px !important;
+        background: rgba(9, 10, 15, 0.68) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .final-cta-section > .container {
+        padding: 2.5rem 3rem !important;
+        border-radius: 14px !important;
+        background: rgba(9, 10, 15, 0.58) !important;
+        border: 1px solid rgba(255, 255, 255, 0.10) !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   GALLERY: NO HOVER BLUR / NO ZOOM / NO HOVER OVERLAY
+   ========================================================= */
+.gallery-img-wrapper,
+.gallery-img-wrapper img,
+.gallery-img-wrapper .gallery-overlay,
+.gallery-img-wrapper .gallery-info,
+.gallery-img-wrapper .gallery-view-text {
+    transition: none !important;
+}
+
+.gallery-img-wrapper:hover img {
+    transform: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.gallery-img-wrapper:hover .gallery-overlay {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.gallery-img-wrapper:hover .gallery-info,
+.gallery-img-wrapper:hover .gallery-view-text {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* Do not blur gallery images through any generic hover rule. */
+.gallery-img-wrapper img {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+
+/* =========================================================
+   FINAL GALLERY HOVER FIX
+   The custom cursor must never blur the page over gallery items.
+   ========================================================= */
+.gallery-img-wrapper:hover ~ .custom-cursor,
+.gallery-img-wrapper:hover + .custom-cursor,
+body:has(.gallery-img-wrapper:hover) .custom-cursor.cursor-grow {
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+body:has(.gallery-img-wrapper:hover) .custom-cursor.cursor-grow::after {
+    display: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}

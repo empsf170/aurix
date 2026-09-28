@@ -243,3 +243,22 @@
         transform: none !important;
     }
 }
+
+
+/* AURIX corrections: mobile/tablet header actions */
+@media (max-width: 1199px) {
+    .mobile-header-actions {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse.show .mobile-header-actions,
+    .navbar-collapse.collapsing .mobile-header-actions {
+        display: block;
+    }
+
+    .event-row .event-info {
+        text-align: left;
+    }
+}
